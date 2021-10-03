@@ -17,7 +17,7 @@ function PdfViewer() {
         <button style={{ border: 'none' }}>
           <PDFDownloadLink
             document={<PdfFile />}
-            filname={'file.pdf'}
+            filname={'sales_order.pdf'}
             className='button_slide slide_down'
           >
             {({ blob, url, loading, error }) =>
@@ -38,7 +38,11 @@ function PdfViewer() {
           padding: '1.5rem',
         }}
       >
-        {view && <PdfFile />}
+        {view && (
+          <PDFViewer height={800} width={800}>
+            <PdfFile />
+          </PDFViewer>
+        )}
       </div>
     </div>
   );

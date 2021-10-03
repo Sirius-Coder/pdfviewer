@@ -20,7 +20,9 @@ const styles = StyleSheet.create({
     fontFamily: 'Montserrat',
     display: 'flex',
     flexDirection: 'column',
-    width: '80rem',
+    fontSize: 10,
+    paddingRight: 1,
+    paddingLeft: 1,
   },
   title: {
     justifyContent: 'center',
@@ -29,13 +31,13 @@ const styles = StyleSheet.create({
   },
   upperbody: {
     width: '100%',
-    marginTop: '1rem',
-    border: '1px solid #000',
+    marginTop: '7.5pt',
+    border: '0.1pt solid #000',
     flexDirection: 'row',
     display: 'flex',
   },
   addressInfo: {
-    borderRight: '1px solid #000',
+    borderRight: '0.1pt solid #000',
     width: '50%',
   },
   address: {
@@ -43,9 +45,9 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'space-around',
     alignItems: 'flex-start',
-    padding: '0.5rem',
-    borderBottom: '1px solid #000',
-    lineHeight: '1.6rem',
+    padding: 0.5,
+    borderBottom: '0.1pt solid #000',
+    lineHeight: '1.4pt',
   },
   billingInfo: {
     display: 'flex',
@@ -62,7 +64,7 @@ const styles = StyleSheet.create({
     flexBasis: '50%',
     lineHeight: '1.6rem',
     padding: '0.5rem',
-    borderBottom: '1px solid #000',
+    borderBottom: '0.1pt solid #000',
   },
   lowerbody: {
     display: 'flex',
@@ -72,14 +74,15 @@ const styles = StyleSheet.create({
   billRow: {
     display: 'flex',
     flexDirection: 'column',
-    lineHeight: '1.6rem',
+    lineHeight: '1.6pt',
   },
   footer: {
     width: '50%',
-    marginTop: '15rem',
+    marginTop: '15pt',
+    marginLeft: '50%',
     display: 'flex',
     flexDirection: 'column',
-    lineHeight: '1.5rem',
+    lineHeight: '1.4pt',
   },
 });
 
@@ -88,14 +91,12 @@ const PdfFile = () => {
     <Document>
       <Page size='A4' style={styles.page}>
         <View style={styles.title}>
-          <Text style={{ fontWeight: 'bold', fontSize: '1.6rem' }}>
-            SALES ORDER
-          </Text>
+          <Text style={{ fontWeight: 'bold', fontSize: 15 }}>SALES ORDER</Text>
         </View>
         <View style={styles.upperbody}>
           <View style={styles.addressInfo}>
             <View style={styles.address}>
-              <Text style={{ fontWeight: 'bold', fontSize: '1.25rem' }}>
+              <Text style={{ fontWeight: 'bold', fontSize: 12 }}>
                 Max Electronics
               </Text>
               <Text>A 204 , Shivaji Nagar , Bengaluru</Text>
@@ -107,7 +108,7 @@ const PdfFile = () => {
             </View>
             <View style={styles.address}>
               <Text>Despatch To</Text>
-              <Text style={{ fontWeight: 'bold', fontSize: '1.25rem' }}>
+              <Text style={{ fontWeight: 'bold', fontSize: 12 }}>
                 Hi-Tech Computer World
               </Text>
               <Text>361 City Plaza</Text>
@@ -118,7 +119,7 @@ const PdfFile = () => {
             </View>
             <View style={styles.address}>
               <Text>Invoice To</Text>
-              <Text style={{ fontWeight: 'bold', fontSize: '1.25rem' }}>
+              <Text style={{ fontWeight: 'bold', fontSize: 12 }}>
                 Hi-Tech Computer World
               </Text>
               <Text>361 City Plaza</Text>
@@ -132,17 +133,15 @@ const PdfFile = () => {
             <View style={styles.billingunit}>
               <View
                 style={Object.assign({}, styles.billingblock, {
-                  borderRight: '1px solid #000',
+                  borderRight: '0.1pt solid #000',
                 })}
               >
                 <Text>Voucher No.</Text>
-                <Text style={{ fontWeight: 'bold', fontSize: '1.25rem' }}>
-                  1
-                </Text>
+                <Text style={{ fontWeight: 'bold', fontSize: 12 }}>1</Text>
               </View>
               <View style={styles.billingblock}>
                 <Text>Dated</Text>
-                <Text style={{ fontWeight: 'bold', fontSize: '1.25rem' }}>
+                <Text style={{ fontWeight: 'bold', fontSize: 12 }}>
                   17-Mar-2020
                 </Text>
               </View>
@@ -150,12 +149,12 @@ const PdfFile = () => {
             <View style={styles.billingunit}>
               <View
                 style={Object.assign({}, styles.billingblock, {
-                  borderRight: '1px solid #000',
+                  borderRight: '0.1pt solid #000',
                 })}
               ></View>
               <View style={styles.billingblock}>
                 <Text>Mode/Terms of Payment</Text>
-                <Text style={{ fontWeight: 'bold', fontSize: '1.25rem' }}>
+                <Text style={{ fontWeight: 'bold', fontSize: 12 }}>
                   15 days via Cheque
                 </Text>
               </View>
@@ -163,37 +162,31 @@ const PdfFile = () => {
             <View style={styles.billingunit}>
               <View
                 style={Object.assign({}, styles.billingblock, {
-                  borderRight: '1px solid #000',
+                  borderRight: '0.1pt solid #000',
                 })}
               >
                 <Text>Buyer's Ref/Order no</Text>
-                <Text style={{ fontWeight: 'bold', fontSize: '1.25rem' }}>
-                  1
-                </Text>
+                <Text style={{ fontWeight: 'bold', fontSize: 12 }}>1</Text>
               </View>
               <View style={styles.billingblock}>
                 <Text>Other References</Text>
-                <Text
-                  style={{ fontWeight: 'bold', fontSize: '1.25rem' }}
-                ></Text>
+                <Text style={{ fontWeight: 'bold', fontSize: 12 }}></Text>
               </View>
             </View>
             <View style={styles.billingunit}>
               <View
                 style={Object.assign({}, styles.billingblock, {
-                  borderRight: '1px solid #000',
+                  borderRight: '0.1pt solid #000',
                 })}
               >
                 <Text>Dispatch through</Text>
-                <Text style={{ fontWeight: 'bold', fontSize: '1.25rem' }}>
+                <Text style={{ fontWeight: 'bold', fontSize: 12 }}>
                   By Road
                 </Text>
               </View>
               <View style={styles.billingblock}>
                 <Text>Destination</Text>
-                <Text
-                  style={{ fontWeight: 'bold', fontSize: '1.25rem' }}
-                ></Text>
+                <Text style={{ fontWeight: 'bold', fontSize: 12 }}></Text>
               </View>
             </View>
             <View
@@ -202,7 +195,7 @@ const PdfFile = () => {
               })}
             >
               <Text>Terms of Delivery</Text>
-              <Text style={{ fontWeight: 'bold', fontSize: '1.25rem' }}>
+              <Text style={{ fontWeight: 'bold', fontSize: 12 }}>
                 Ex-Factory Delivery
               </Text>
             </View>
@@ -213,21 +206,19 @@ const PdfFile = () => {
           <View style={{ ...styles.billRow, flexBasis: '5%' }}>
             <View
               style={{
-                border: '1px solid #000',
+                border: '0.1pt solid #000',
                 borderTop: 'none',
                 textAlign: 'center',
-                padding: '0.25rem',
               }}
             >
-              <Text>SL. No</Text>
+              <Text>SL.No</Text>
             </View>
             <View
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                padding: '0.5rem',
-                border: '1px solid #000',
-                height: '15rem',
+                border: '0.1pt solid #000',
+                height: 100,
               }}
             >
               <Text>1</Text>
@@ -236,8 +227,7 @@ const PdfFile = () => {
             <Text
               style={{
                 textAlign: 'right',
-                padding: '.25rem',
-                border: '1px solid #000',
+                border: '0.1pt solid #000',
                 color: 'transparent',
               }}
             >
@@ -247,10 +237,9 @@ const PdfFile = () => {
           <View style={{ ...styles.billRow, flexBasis: '30%' }}>
             <Text
               style={{
-                borderBottom: '1px solid #000',
-                borderRight: '1px solid #000',
+                borderBottom: '0.1pt solid #000',
+                borderRight: '0.1pt solid #000',
                 textAlign: 'center',
-                padding: '0.25rem',
               }}
             >
               Description of Goods
@@ -259,20 +248,19 @@ const PdfFile = () => {
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                padding: '0.5rem',
-                border: '1px solid #000',
-                height: '15rem',
+                border: '0.1pt solid #000',
+                height: 100,
               }}
             >
-              <Text style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>
+              <Text style={{ fontSize: 12, fontWeight: 'bold' }}>
                 Asus 16.6 inch Monitor
               </Text>
-              <Text style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>
+              <Text style={{ fontSize: 12, fontWeight: 'bold' }}>
                 Dell 17 inch Monitor{' '}
               </Text>
               <Text
                 style={{
-                  fontSize: '1.25rem',
+                  fontSize: 12,
                   fontWeight: 'bold',
                   textAlign: 'right',
                   marginTop: '3rem',
@@ -282,7 +270,7 @@ const PdfFile = () => {
               </Text>
               <Text
                 style={{
-                  fontSize: '1.25rem',
+                  fontSize: 12,
                   fontWeight: 'bold',
                   textAlign: 'right',
                 }}
@@ -293,8 +281,7 @@ const PdfFile = () => {
             <Text
               style={{
                 textAlign: 'right',
-                padding: '.25rem',
-                border: '1px solid #000',
+                border: '0.1pt solid #000',
               }}
             >
               Total
@@ -303,10 +290,9 @@ const PdfFile = () => {
           <View style={{ ...styles.billRow, flexBasis: '10%' }}>
             <Text
               style={{
-                borderBottom: '1px solid #000',
-                borderRight: '1px solid #000',
+                borderBottom: '0.1pt solid #000',
+                borderRight: '0.1pt solid #000',
                 textAlign: 'center',
-                padding: '0.25rem',
               }}
             >
               HSN/SAC
@@ -315,10 +301,9 @@ const PdfFile = () => {
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                padding: '0.5rem',
                 alignItems: 'center',
-                border: '1px solid #000',
-                height: '15rem',
+                border: '0.1pt solid #000',
+                height: 100,
               }}
             >
               <Text>8471</Text>
@@ -327,8 +312,7 @@ const PdfFile = () => {
             <Text
               style={{
                 textAlign: 'right',
-                padding: '.25rem',
-                border: '1px solid #000',
+                border: '0.1pt solid #000',
                 color: 'transparent',
               }}
             >
@@ -338,10 +322,9 @@ const PdfFile = () => {
           <View style={{ ...styles.billRow, flexBasis: '10%' }}>
             <Text
               style={{
-                borderBottom: '1px solid #000',
-                borderRight: '1px solid #000',
+                borderBottom: '0.1pt solid #000',
+                borderRight: '0.1pt solid #000',
                 textAlign: 'center',
-                padding: '0.25rem',
               }}
             >
               Due On
@@ -350,10 +333,9 @@ const PdfFile = () => {
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                padding: '0.5rem',
                 alignItems: 'center',
-                border: '1px solid #000',
-                height: '15rem',
+                border: '0.1pt solid #000',
+                height: 100,
               }}
             >
               <Text>3 Days</Text>
@@ -362,8 +344,7 @@ const PdfFile = () => {
             <Text
               style={{
                 textAlign: 'right',
-                padding: '.25rem',
-                border: '1px solid #000',
+                border: '0.1pt solid #000',
                 color: 'transparent',
               }}
             >
@@ -373,10 +354,9 @@ const PdfFile = () => {
           <View style={{ ...styles.billRow, flexBasis: '10%' }}>
             <Text
               style={{
-                borderBottom: '1px solid #000',
-                borderRight: '1px solid #000',
+                borderBottom: '0.1pt solid #000',
+                borderRight: '0.1pt solid #000',
                 textAlign: 'center',
-                padding: '0.25rem',
               }}
             >
               Quantity
@@ -385,10 +365,9 @@ const PdfFile = () => {
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                padding: '0.5rem',
                 alignItems: 'center',
-                border: '1px solid #000',
-                height: '15rem',
+                border: '0.1pt solid #000',
+                height: 100,
               }}
             >
               <Text>10 Nos</Text>
@@ -397,8 +376,7 @@ const PdfFile = () => {
             <Text
               style={{
                 textAlign: 'right',
-                padding: '.25rem',
-                border: '1px solid #000',
+                border: '0.1pt solid #000',
                 fontWeight: 'bold',
               }}
             >
@@ -408,10 +386,9 @@ const PdfFile = () => {
           <View style={{ ...styles.billRow, flexBasis: '10%' }}>
             <Text
               style={{
-                borderBottom: '1px solid #000',
-                borderRight: '1px solid #000',
+                borderBottom: '0.1pt solid #000',
+                borderRight: '0.1pt solid #000',
                 textAlign: 'center',
-                padding: '0.25rem',
               }}
             >
               Rate
@@ -420,10 +397,9 @@ const PdfFile = () => {
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                padding: '0.5rem',
                 alignItems: 'center',
-                border: '1px solid #000',
-                height: '15rem',
+                border: '0.1pt solid #000',
+                height: 100,
               }}
             >
               <Text>7000.00</Text>
@@ -432,8 +408,7 @@ const PdfFile = () => {
             <Text
               style={{
                 textAlign: 'right',
-                padding: '.25rem',
-                border: '1px solid #000',
+                border: '0.1pt solid #000',
                 color: 'transparent',
               }}
             >
@@ -443,10 +418,9 @@ const PdfFile = () => {
           <View style={{ ...styles.billRow, flexBasis: '10%' }}>
             <Text
               style={{
-                borderBottom: '1px solid #000',
-                borderRight: '1px solid #000',
+                borderBottom: '0.1pt solid #000',
+                borderRight: '0.1pt solid #000',
                 textAlign: 'center',
-                padding: '0.25rem',
               }}
             >
               per
@@ -455,10 +429,9 @@ const PdfFile = () => {
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                padding: '0.5rem',
                 alignItems: 'center',
-                border: '1px solid #000',
-                height: '15rem',
+                border: '0.1pt solid #000',
+                height: 100,
               }}
             >
               <Text>Nos</Text>
@@ -467,8 +440,7 @@ const PdfFile = () => {
             <Text
               style={{
                 textAlign: 'right',
-                padding: '.25rem',
-                border: '1px solid #000',
+                border: '0.1pt solid #000',
                 color: 'transparent',
               }}
             >
@@ -478,10 +450,9 @@ const PdfFile = () => {
           <View style={{ ...styles.billRow, flexBasis: '15%' }}>
             <Text
               style={{
-                borderBottom: '1px solid #000',
-                borderRight: '1px solid #000',
+                borderBottom: '0.1pt solid #000',
+                borderRight: '0.1pt solid #000',
                 textAlign: 'center',
-                padding: '0.25rem',
               }}
             >
               Amount
@@ -490,38 +461,36 @@ const PdfFile = () => {
               style={{
                 display: 'flex',
                 flexDirection: 'column',
-                padding: '0.5rem',
                 alignItems: 'center',
-                border: '1px solid #000',
-                height: '15rem',
+                border: '0.1pt solid #000',
+                height: 100,
               }}
             >
-              <Text style={{ fontWeight: 'bold', fontSize: '1.25rem' }}>
+              <Text style={{ fontWeight: 'bold', fontSize: 11 }}>
                 70,000.00
               </Text>
-              <Text style={{ fontWeight: 'bold', fontSize: '1.25rem' }}>
+              <Text style={{ fontWeight: 'bold', fontSize: 11 }}>
                 80,000.00
               </Text>
               <Text
                 style={{
-                  marginTop: '3rem',
+                  marginTop: 3,
                   fontWeight: 'bold',
-                  fontSize: '1.25rem',
+                  fontSize: 12,
                 }}
               >
                 13,500.00
               </Text>
-              <Text style={{ fontWeight: 'bold', fontSize: '1.25rem' }}>
+              <Text style={{ fontWeight: 'bold', fontSize: 11 }}>
                 13,500.00
               </Text>
             </View>
             <Text
               style={{
                 textAlign: 'right',
-                padding: '.25rem',
-                border: '1px solid #000',
+                border: '0.1pt solid #000',
                 fontWeight: 'bold',
-                fontSize: '1.25rem',
+                fontSize: 10,
               }}
             >
               ₹1,77,000.00
@@ -529,53 +498,53 @@ const PdfFile = () => {
           </View>
         </View>
         <View
-          style={{ width: '100%', border: '1px solid #000', display: 'flex' }}
+          style={{ width: '100%', border: '0.1pt solid #000', display: 'flex' }}
         >
           <View
             style={{
               width: '100%',
               display: 'flex',
               flexDirection: 'column',
-              lineHeight: '2.5rem',
-              padding: '0.25rem',
+              lineHeight: '1.5pt',
+              padding: '0.3pt',
             }}
           >
             <Text>Amount Chargeable (in Words)</Text>
-            <Text style={{ fontWeight: 'bold', fontSize: '1.25rem' }}>
+            <Text style={{ fontWeight: 'bold', fontSize: 12 }}>
               INR One Lakh Seventy Thousand Only
             </Text>
           </View>
           <View style={styles.footer}>
             <Text>Company's Bank Details</Text>
-            <View>
+            <View style={{ flexDirection: 'row' }}>
               <Text>Bank Name :</Text>
               <Text
                 style={{
                   fontWeight: 'bold',
-                  marginLeft: '2rem',
+                  marginLeft: '2pt',
                 }}
               >
                 ICICI
               </Text>
             </View>
-            <View>
+            <View style={{ flexDirection: 'row' }}>
               <Text>A/c No. :</Text>
               <Text
                 style={{
                   fontWeight: 'bold',
-                  marginLeft: '2rem',
+                  marginLeft: '2pt',
                 }}
               >
                 0400312022548
               </Text>
             </View>
-            <View>
+            <View style={{ flexDirection: 'row' }}>
               <Text>Branch & IFSC Code :</Text>
               <Text
                 style={{
                   fontWeight: 'bold',
                   textAlign: 'left',
-                  marginLeft: '2rem',
+                  marginLeft: '2pt',
                 }}
               >
                 SBI100025SE
@@ -583,8 +552,8 @@ const PdfFile = () => {
             </View>
             <View
               style={{
-                height: '5rem',
-                border: '1px solid #000',
+                height: 50,
+                border: '0.1pt solid #000',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
